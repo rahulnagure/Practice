@@ -22,14 +22,17 @@ public class AmenityController {
 	@Autowired
 	private AmenityService amenityService;
 	
+	
 	/**
-	 * Gets all the amenities
-	 * @return
+	 * Saves all the amenities
+	 * @param amenity
 	 */
-	@GetMapping
-	public List<Amenity> getAllAmenities(){
-		return amenityService.getAllAmenities();
+	@PostMapping
+	public Amenity saveAmenitie(@RequestBody Amenity amenity){
+		return amenityService.saveAmenity(amenity);
 	}
+	
+	
 
 	/**
 	 * Saves all the amenities
